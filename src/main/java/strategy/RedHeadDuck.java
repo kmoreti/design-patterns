@@ -2,8 +2,8 @@ package strategy;
 
 public class RedHeadDuck extends Duck {
     public RedHeadDuck() {
-        flyBehavior = new FlyWithWings();
-        quackBehavior = new Quack();
+        setFlyBehavior(new FlyWithWings());
+        setQuackBehavior(new Quack());
     }
 
     public void display() {

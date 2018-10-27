@@ -2,8 +2,8 @@ package strategy;
 
 public class ModelDuck extends Duck {
 	public ModelDuck() {
-		flyBehavior = new FlyNoWay();
-		quackBehavior = new Quack();
+		setFlyBehavior(new FlyNoWay());
+		setQuackBehavior(new Quack());
 	}
 
 	public void display() {

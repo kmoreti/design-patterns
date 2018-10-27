@@ -3,8 +3,8 @@ package strategy;
 public class RubberDuck extends Duck {
 
     public RubberDuck() {
-        quackBehavior = new Squeak();
-        flyBehavior = new FlyNoWay();
+        setQuackBehavior(new Squeak());
+        setFlyBehavior(new FlyNoWay());
     }
 
     @Override
