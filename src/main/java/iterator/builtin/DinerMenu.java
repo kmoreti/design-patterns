@@ -1,0 +1,42 @@
+package iterator.builtin;
+
+import java.util.Iterator;
+
+public class DinerMenu implements Menu {
+    static final int MAX_ITEMS = 6;
+    int numberOfItems = 0;
+    String[] menuItems;
+
+    public DinerMenu() {
+        menuItems = new String[MAX_ITEMS];
+
+        addItem("Vegetarian BLT");
+        addItem("BLT");
+        addItem("Soup of the day");
+        addItem("Hotdog");
+        addItem("Steamed Veggies and Brown Rice");
+        addItem("Pasta");
+    }
+
+    private void addItem(String name) {
+        if (numberOfItems >= MAX_ITEMS) {
+            System.err.println("Sorry, menu is full! Can't add item to menu");
+        } else {
+            menuItems[numberOfItems] = name;
+            numberOfItems++;
+        }
+    }
+
+    public String[] getMenuItems() {
+        return menuItems;
+    }
+
+    public Iterator createIterator() {
+        return new DinerMenuIterator(menuItems);
+    }
+
+    @Override
+    public String toString() {
+        return "Dinner Menu";
+    }
+}
